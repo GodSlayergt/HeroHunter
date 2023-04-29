@@ -80,12 +80,10 @@ window.addEventListener('click', (e) => {
         const found = store.find((val) => val.id == id)
         favList.add(found)
         document.getElementById("favHeroPage").innerText = `My favorite superheroes list ${favList.size}`
+        window.localStorage.setItem('heroeslist', JSON.stringify(Array.from(favList)))
     }
 })
 
-document.getElementById('favHeroPage').addEventListener('click', () => {
-    window.localStorage.setItem('heroeslist', JSON.stringify(Array.from(favList)))
-})
 
 const inputField = document.getElementById('searchfield')
 
