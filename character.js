@@ -1,7 +1,3 @@
-
-
-
-
 const privateKey = '81416cbfce90698cd10408110bdd05c796e07894'
 const publicKey = '2f83107e6e3a9c6dbff2bb1d276bf49b'
 let store = []
@@ -15,9 +11,9 @@ const getData = async () => {
     const ts = Date.now()
     const k = ts + privateKey + publicKey
     const hash = CryptoJS.MD5(k).toString()
-    const response = await fetch(`http://gateway.marvel.com/v1/public/characters/${params.get('id')}?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-    const comics = await fetch(`http://gateway.marvel.com/v1/public/characters/${params.get('id')}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
-    const series = await fetch(`http://gateway.marvel.com/v1/public/characters/${params.get('id')}/series?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    const response = await fetch(`https://gateway.marvel.com/v1/public/characters/${params.get('id')}?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    const comics = await fetch(`https://gateway.marvel.com/v1/public/characters/${params.get('id')}/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    const series = await fetch(`https://gateway.marvel.com/v1/public/characters/${params.get('id')}/series?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
     const data = await Promise.all([await response.json(),await comics.json(),await series.json()])
     return data
 }

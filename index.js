@@ -25,7 +25,7 @@ const getData = async () => {
     const ts = Date.now()
     const k = ts + privateKey + publicKey
     const hash = CryptoJS.MD5(k).toString()
-    const response = await fetch(`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&limit=100`)
+    const response = await fetch(`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&limit=100`)
    
     const data = await response.json()
     return data
