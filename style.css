@@ -1,0 +1,144 @@
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin: 30px auto;
+    border: 2px solid darkslateblue;
+    border-radius: 7px;
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 25px;
+    position:sticky;
+    top:7px;
+    z-index: 2;
+   
+}
+#favHeroPage{
+   line-height: 2.5;
+}
+
+#searchfield {
+    width: 500px;
+    height: 47px;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-size: 24px;
+}
+
+#searchfield::placeholder {
+    font-size: 20px;
+}
+
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 47px;
+    column-gap: 50px;
+}
+
+.card {
+    text-decoration: none;
+}
+
+.card>div {
+
+    border: 3px solid;
+    box-shadow: 1px 1px 6px 1px black;
+    width: 200px;
+}
+
+.card>div>img {
+    width: 100%;
+    height: 100%;
+}
+
+.card>div>p {
+    margin: 0px;
+    text-align: center;
+    background-color: black;
+}
+
+.additem {
+    z-index: 3;
+    position: absolute;
+    top: -50px;
+    line-height: 0;
+    left: 50px;
+    visibility: hidden;
+    border: none;
+    height: 32px;
+    border-radius: 6px;
+    width: 120px;
+    font-size: medium;
+    font-weight: bold;
+    transition: all 300ms ease-in;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+
+}
+.additem:hover{
+    cursor: pointer;
+}
+
+button.additem:active{
+    box-shadow: 2px 2px 5px #fc894d;
+}
+
+.cardcontainer:hover .additem{
+    transform: scale(1.5);
+   visibility: visible;
+}
+
+.pagination{
+    display: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+#next{
+    margin-left:7px;
+}
+
+/* CSS */
+#next , #prev {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#next:hover ,#prev:hover  {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+#loading {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgb(0 0 0 / 30%);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
